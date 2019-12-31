@@ -1,0 +1,33 @@
+5:C 23 Dec 2019 09:38:23.420 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+5:C 23 Dec 2019 09:38:23.420 # Redis version=5.0.5, bits=64, commit=00000000, modified=0, pid=5, just started
+5:C 23 Dec 2019 09:38:23.420 # Configuration loaded
+5:M 23 Dec 2019 09:38:23.422 * No cluster configuration found, I'm 3ba0fb768d789016a2ffa3cbbde7abe059031898
+5:M 23 Dec 2019 09:38:23.447 * Running mode=cluster, port=6379.
+5:M 23 Dec 2019 09:38:23.447 # WARNING: The TCP backlog setting of 511 cannot be enforced because /proc/sys/net/core/somaxconn is set to the lower value of 128.
+5:M 23 Dec 2019 09:38:23.447 # Server initialized
+5:M 23 Dec 2019 09:38:23.447 # WARNING overcommit_memory is set to 0! Background save may fail under low memory condition. To fix this issue add 'vm.overcommit_memory = 1' to /etc/sysctl.conf and then reboot or run the command 'sysctl vm.overcommit_memory=1' for this to take effect.
+5:M 23 Dec 2019 09:38:23.447 # WARNING you have Transparent Huge Pages (THP) support enabled in your kernel. This will create latency and memory usage issues with Redis. To fix this issue run the command 'echo never > /sys/kernel/mm/transparent_hugepage/enabled' as root, and add it to your /etc/rc.local in order to retain the setting after a reboot. Redis must be restarted after THP is disabled.
+5:M 23 Dec 2019 09:38:23.447 * Ready to accept connections
+5:M 23 Dec 2019 09:44:15.880 # configEpoch set to 6 via CLUSTER SET-CONFIG-EPOCH
+5:M 23 Dec 2019 09:44:21.106 # Cluster state changed: ok
+5:S 23 Dec 2019 09:44:22.906 * Before turning into a replica, using my master parameters to synthesize a cached master: I may be able to synchronize with the new master with just a partial transfer.
+5:S 23 Dec 2019 09:44:23.714 * Connecting to MASTER 140.143.16.122:6392
+5:S 23 Dec 2019 09:44:23.714 * MASTER <-> REPLICA sync started
+5:S 23 Dec 2019 09:44:23.714 * Non blocking connect for SYNC fired the event.
+5:S 23 Dec 2019 09:44:23.715 * Master replied to PING, replication can continue...
+5:S 23 Dec 2019 09:44:23.716 * Trying a partial resynchronization (request d42e15e9caacef38b612aa4b87a08b422132045c:1).
+5:S 23 Dec 2019 09:44:23.718 * Full resync from master: 5dd907e85df2ef1dbcb48e4e8533a2fc8b4e6bc1:0
+5:S 23 Dec 2019 09:44:23.718 * Discarding previously cached master state.
+5:S 23 Dec 2019 09:44:23.752 * MASTER <-> REPLICA sync: receiving 175 bytes from master
+5:S 23 Dec 2019 09:44:23.752 * MASTER <-> REPLICA sync: Flushing old data
+5:S 23 Dec 2019 09:44:23.753 * MASTER <-> REPLICA sync: Loading DB in memory
+5:S 23 Dec 2019 09:44:23.753 * MASTER <-> REPLICA sync: Finished with success
+5:S 23 Dec 2019 09:44:23.753 * Background append only file rewriting started by pid 9
+5:S 23 Dec 2019 09:44:23.783 * AOF rewrite child asks to stop sending diffs.
+9:C 23 Dec 2019 09:44:23.783 * Parent agreed to stop sending diffs. Finalizing AOF...
+9:C 23 Dec 2019 09:44:23.783 * Concatenating 0.00 MB of AOF diff received from parent.
+9:C 23 Dec 2019 09:44:23.784 * SYNC append only file rewrite performed
+9:C 23 Dec 2019 09:44:23.785 * AOF rewrite: 0 MB of memory used by copy-on-write
+5:S 23 Dec 2019 09:44:23.815 * Background AOF rewrite terminated with success
+5:S 23 Dec 2019 09:44:23.815 * Residual parent diff successfully flushed to the rewritten AOF (0.00 MB)
+5:S 23 Dec 2019 09:44:23.815 * Background AOF rewrite finished successfully

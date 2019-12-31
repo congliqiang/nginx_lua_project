@@ -1,0 +1,42 @@
+site_name: RedisBloom Documentation
+site_url: http://redisbloom.io
+repo_url: https://github.com/RedisBloom/RedisBloom
+repo_name: RedisBloom/RedisBloom
+
+google_analytics:
+  - 'UA-92003007-1'
+  - 'auto'
+
+use_directory_urls: true
+
+theme:
+  name: 'material'
+  language: 'en'
+  logo: 'images/logo_small.png'
+  favicon: 'images/favicon.png'
+  palette:
+    primary: 'indigo'
+    accent: 'red'
+  font:
+    text: 'Roboto'
+    code: 'Roboto Mono'
+  feature:
+    tabs: false
+
+markdown_extensions:
+  - admonition
+  - codehilite:
+      guess_lang: False
+  - toc:
+      permalink: True
+
+pages:
+    - 'RedisBloom': 'index.md'
+    - 'Quick Start': 'Quick_Start.md'
+    - 'Configuration': 'Configuration.md'  
+    - Command References:
+      - 'Bloom Filter': 'Bloom_Commands.md'
+      - 'Cuckoo Filter': 'Cuckoo_Commands.md'
+      - 'Count-Min-Sketch': 'CountMinSketch_Commands.md'
+      - 'Top-K': 'TopK_Commands.md'
+    - 'Contributor agreement': 'contrib.md'

@@ -1,0 +1,20 @@
+5:C 23 Dec 2019 09:38:24.109 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+5:C 23 Dec 2019 09:38:24.110 # Redis version=5.0.5, bits=64, commit=00000000, modified=0, pid=5, just started
+5:C 23 Dec 2019 09:38:24.110 # Configuration loaded
+5:M 23 Dec 2019 09:38:24.111 * No cluster configuration found, I'm 682575d0c9e4190814e6e4874053960bc114b050
+5:M 23 Dec 2019 09:38:24.129 * Running mode=cluster, port=6379.
+5:M 23 Dec 2019 09:38:24.129 # WARNING: The TCP backlog setting of 511 cannot be enforced because /proc/sys/net/core/somaxconn is set to the lower value of 128.
+5:M 23 Dec 2019 09:38:24.129 # Server initialized
+5:M 23 Dec 2019 09:38:24.129 # WARNING overcommit_memory is set to 0! Background save may fail under low memory condition. To fix this issue add 'vm.overcommit_memory = 1' to /etc/sysctl.conf and then reboot or run the command 'sysctl vm.overcommit_memory=1' for this to take effect.
+5:M 23 Dec 2019 09:38:24.129 # WARNING you have Transparent Huge Pages (THP) support enabled in your kernel. This will create latency and memory usage issues with Redis. To fix this issue run the command 'echo never > /sys/kernel/mm/transparent_hugepage/enabled' as root, and add it to your /etc/rc.local in order to retain the setting after a reboot. Redis must be restarted after THP is disabled.
+5:M 23 Dec 2019 09:38:24.129 * Ready to accept connections
+5:M 23 Dec 2019 09:44:15.877 # configEpoch set to 2 via CLUSTER SET-CONFIG-EPOCH
+5:M 23 Dec 2019 09:44:20.438 # Cluster state changed: ok
+5:M 23 Dec 2019 09:44:23.350 * Replica 140.143.16.122:6379 asks for synchronization
+5:M 23 Dec 2019 09:44:23.350 * Partial resynchronization not accepted: Replication ID mismatch (Replica asked for '418b63b6571981d4206855232fd840b59ba3b234', my replication IDs are 'ffedd9cd1b0af13b226b549d9a6e1802a7be1845' and '0000000000000000000000000000000000000000')
+5:M 23 Dec 2019 09:44:23.350 * Starting BGSAVE for SYNC with target: disk
+5:M 23 Dec 2019 09:44:23.350 * Background saving started by pid 9
+9:C 23 Dec 2019 09:44:23.359 * DB saved on disk
+9:C 23 Dec 2019 09:44:23.360 * RDB: 0 MB of memory used by copy-on-write
+5:M 23 Dec 2019 09:44:23.448 * Background saving terminated with success
+5:M 23 Dec 2019 09:44:23.448 * Synchronization with replica 140.143.16.122:6379 succeeded

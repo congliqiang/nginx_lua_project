@@ -1,0 +1,51 @@
+version: "3.6"
+services:
+ nginx-distribution:
+        image: nginx
+        container_name: nginx-distribution
+        working_dir: /usr/local/openresty
+        ports:
+          - "8001:80"
+        stdin_open: true
+        networks:
+          cache-network:
+             ipv4_address: 192.168.1.8
+        tty: true
+        privileged: true
+        volumes:
+            - /usr/docker/cache/project/conf/nginx/distribute:/usr/local/openresty/nginx/conf
+            - /usr/docker/cache/project/code/nginx/distribute:/usr/local/openresty/lualib/project
+ nginx-application:
+        image: nginx
+        container_name: nginx-application
+        working_dir: /usr/local/openresty
+        ports:
+          - "8002:80"
+        stdin_open: true
+        networks:
+            cache-network:
+             ipv4_address: 192.168.1.9
+        tty: true
+        privileged: true
+        volumes:
+              - /usr/docker/cache/project/conf/nginx/application:/usr/local/openresty/nginx/conf
+              - /usr/docker/cache/project/code/nginx/application:/usr/local/openresty/lualib/project
+ nginx-application-1:
+          image: nginx
+          container_name: nginx-application-1
+          working_dir: /nginx-test
+          ports:
+            - "8003:80"
+          stdin_open: true
+          networks:
+             cache-network:
+               ipv4_address: 192.168.1.10
+          tty: true
+          privileged: true
+          volumes:
+              - /usr/docker/cache/project/conf/nginx/application:/usr/local/openresty/nginx/conf
+              - /usr/docker/cache/project/code/nginx/application:/usr/local/openresty/lualib/project
+networks:
+    cache-network:
+      external:
+         name: redis-network

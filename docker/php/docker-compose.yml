@@ -1,0 +1,33 @@
+version: "3.6"
+services:
+  php-fpm:
+    image: php-fpm
+    ports:
+        - "9090:9000"
+    volumes:
+      - /usr/docker/cache/project/code/php:/var/www
+      - /usr/docker/cache/docker/php/conf/php.ini:/usr/local/etc/php/php.ini
+    stdin_open: true
+    tty: true
+    privileged: true
+    networks:
+        cache-network:
+          ipv4_address: 192.168.1.11
+  mysql:
+    image: mysql:5.7
+    ports:
+      - "3307:3306"
+    volumes:
+       - ./conf/mysql/mysql.cnf:/etc/mysql/conf.d/mysql.cnf
+    stdin_open: true
+    tty: true
+    privileged: true
+    networks:
+       cache-network:
+          ipv4_address: 192.168.1.12
+    environment:
+      MYSQL_ROOT_PASSWORD: "123456"
+networks:
+ cache-network:
+    external:
+       name: redis-network
