@@ -33,7 +33,7 @@ services:
  nginx-application-1:
           image: nginx
           container_name: nginx-application-1
-          working_dir: /nginx-test
+          working_dir: /usr/local/openresty
           ports:
             - "8003:80"
           stdin_open: true

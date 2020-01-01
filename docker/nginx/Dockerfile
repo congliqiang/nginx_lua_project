@@ -19,7 +19,8 @@ RUN  mkdir -p /usr/local/openresty/lualib/project && mkdir -p /usr/local/openres
     --add-module=/tmp/nginx-upsync-module-2.1.0 \
  	--add-module=/tmp/ngx_cache_purge-2.3 \
     &&  make &&  make install
-
+RUN yum install perl-Digest-MD5 -y
+RUN opm --install-dir=usr/local/openresty/lualib/project/common get hamishforbes/lua-resty-consul
 RUN  ln -s /usr/local/openresty/bin/*  /usr/bin
 
 CMD ["openresty","-c","/usr/local/openresty/nginx/conf/nginx.conf"]

@@ -46,31 +46,31 @@ local sub = function(premature)
     local redis = require "resty.redis"
     local cjson = require "cjson"
     local red = redis:new()
-    red:connect("140.143.16.122",6391)
+    red:connect("140.143.16.122", 6391)
     red:auth("sixstar")
     while 1 do
-        local ok,err = red:subscribe("cacheUpdate")
-        local res,err=red:read_reply() --订阅的频道中获取
-        ngx.log(ngx.ERR,"订阅消息-----------",cjson.encode(res))
+        local ok, err = red:subscribe("cacheUpdate")
+        local res, err = red:read_reply() --订阅的频道中获取
+        ngx.log(ngx.ERR, "订阅消息-----------", cjson.encode(res))
         --缓存更新
-        local mlcache=require "resty.mlcache"
-        local cache,err=mlcache.new("cache_name","my_cache",{
-            lru_size=500,--设置缓存的个数
-            ttl=5,--缓存过期时间
-            neg_ttl=6,--L3返回nil的保存时间
-            ipc_shm="ipc_cache"--用于将L2的缓存设置到L1
+        local mlcache = require "resty.mlcache"
+        local cache, err = mlcache.new("cache_name", "my_cache", {
+            lru_size = 500, --设置缓存的个数
+            ttl = 5, --缓存过期时间
+            neg_ttl = 6, --L3返回nil的保存时间
+            ipc_shm = "ipc_cache" --用于将L2的缓存设置到L1
         })
         if not cache then
-            ngx.log(ngx.ERR,"缓存创建失败",err)
+            ngx.log(ngx.ERR, "缓存创建失败", err)
         end
         math.randomseed(tostring(os.time()))
-        local expire_time=math.random(1,6)
-        res=cache:set("cache",{ttl=expire_time},"xxx")
-        ngx.log(ngx.ERR,"缓存更新成功吗",res)
+        local expire_time = math.random(1, 6)
+        res = cache:set("cache", { ttl = expire_time }, "xxx")
+        ngx.log(ngx.ERR, "缓存更新成功吗", res)
     end
 end
 if (0 == ngx.worker.id()) then
-    ngx.timer.at(0,sub)
+    ngx.timer.at(0, sub)
     --第一次立即执行
     local ok, err = ngx.timer.at(0, handler)
     if not ok then

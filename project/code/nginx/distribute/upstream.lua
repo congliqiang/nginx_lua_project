@@ -4,7 +4,7 @@ if id == nil then
     ngx.say("url")
     return
 end
-local  server={"118.24.109.254:8002","118.24.109.254:8003"}
+local  server={"140.143.16.122:8002","140.143.16.122:8003"}
 local  hash=ngx.crc32_long(id)
 local  index=(hash % table.getn(server))+1
 url="http://"..server[index]
