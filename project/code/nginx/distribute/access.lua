@@ -3,7 +3,7 @@ local ngx_re_split=require("ngx.re").split
 local config = {
     name = "testCluster",                   --rediscluster name
     serv_list={{
-        ip="118.24.109.254",port=6390
+        ip="140.143.16.122",port=6390
     }},
     keepalive_timeout = 60000,              --redis connection pool idle timeout
     keepalive_cons = 1000,                  --redis connection pool size
